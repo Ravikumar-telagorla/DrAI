@@ -63,11 +63,6 @@ export default function Home() {
     }
   };
 
-  interface Message {
-    from: "ai" | "user";
-    text: string;
-  }
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
