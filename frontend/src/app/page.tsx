@@ -36,9 +36,9 @@ export default function Home() {
 
     // Temporary "typing..." indicator
     setMessages((prev) => [...prev, { from: "ai", text: "typing..." }]);
-
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:5000";
     try {
-      const res = await fetch("http://localhost:5000/api/chat/", {
+      const res = await fetch(`${API_BASE}/api/chat/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: userMessage }),
